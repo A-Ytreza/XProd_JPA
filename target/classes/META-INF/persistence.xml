@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
+
+	<persistence-unit name="CoursManager"
+		transaction-type="RESOURCE_LOCAL">
+
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+		<class>Eleve</class>
+		<class>Matiere</class>
+		<class>Note</class>
+		
+
+		<properties>
+			<!-- Database connection settings -->
+
+			<property name="javax.persistence.jdbc.driver"
+				value="com.mysql.cj.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:mysql://localhost:3306/coursjpa?useSSL=false&amp;serverTimezone=UTC" />
+			<property name="javax.persistence.jdbc.user" value="root" />
+			<property name="javax.persistence.jdbc.password" value="(The_75_kid)" />
+
+			<!-- SQL Dialect -->
+
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.MySQLDialect" />
+
+			<!-- Create/update tables automatically using mapping metadata -->
+
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			
+			<property name="hibernate.id.new_generator_mappings" value = "false"/>
+
+			<!-- Pretty print SQL in log file -->
+
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.max_fetch_depth" value="3" />
+
+		</properties>
+
+	</persistence-unit>
+
+</persistence>
